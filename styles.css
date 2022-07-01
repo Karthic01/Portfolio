@@ -1,0 +1,268 @@
+
+
+.navigation
+{
+    position:fixed;
+    left: 10px;
+    width: 70px;
+    top:100px;
+    height: 350px;
+    background: #fff;
+    border-radius: 35px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+ 
+}
+.navigation ul
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    left:-18px;
+    top:3px;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.navigation ul li a
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-weight: 500;
+}
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    text-align: center;
+    transition: 0.5s;
+}
+.navigation ul li.active a .icon
+{
+    color:#fff
+}
+.navigation ul li a .icon i{
+    font-size: 24px;
+}
+.navigation ul li a .title
+{
+    position: absolute;
+    top: 50%;
+    left: 110px;
+    background: #fff;
+    transform: translateY(-50%);
+    border-radius: 6px;
+    padding: 5px 10px;
+    transition: 0.5s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.navigation ul li:hover a .title
+{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-25px) translateY(-50%);
+}
+
+.navigation ul li a .title::before
+{
+    content: " ";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    left: -9px;
+    top: 45%;
+    transform: rotate(45deg) translateY(-50%);
+    border-radius: 2px;
+}
+.navigation ul .indicator
+{
+    position:absolute;
+    left: -50px;
+    top:-80px;
+    width:70px;
+    height:70px;
+    transition: 0.5s;
+
+}
+.navigation ul .indicator::before
+{
+    content: " ";
+    position: absolute;
+    top:100px;
+    left:100%;
+    transform: translate(-8px,-8px);
+    width:50px;
+    height:50px;
+    background: #333;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.navigation ul li:nth-child(1).active ~ .indicator
+{
+    transform: translateY(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator
+{
+    transform: translateY(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator
+{
+    transform: translateY(calc(70px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator
+{
+    transform: translateY(calc(70px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator
+{
+    transform: translateY(calc(70px * 4));
+}
+
+
+
+
+
+
+
+
+.proj
+{
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin:20px;
+    border-radius: 20px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.proj:hover{
+    width:430px;
+    transition-delay: 0s;
+}
+.proj .circle{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.proj .circle::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background: var(--clr);
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+.proj:hover .circle::before{
+    clip-path: circle(400px at center);
+}
+.proj .circle .logo
+{
+    position: relative;
+    width:200px;
+    transition: 0.5s;
+    transition-delay:0.5s ;
+}
+.proj:hover .circle .logo
+{
+    transform:scale(0) ;
+    transition-delay: 0s;
+}
+.content
+{
+    position: relative;
+    width:50%;
+    left:20%;
+    padding:20px 20px 20px 40px;
+    opacity: 0;
+    transition:0.5s;
+    visibility:hidden;
+
+}
+.proj:hover .content
+{
+    left:0;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+
+}
+.content h2
+{
+    color:black;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    line-height:1em;
+}
+.content h3
+{
+    color:black;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    line-height:1em;
+}
+.content p{
+    padding:10px;
+    color:white;
+}
+.content a
+{
+    position: relative;
+    color:black;
+    background: white;
+    padding:10px 20px;
+    border-radius: 10px;
+    display:inline-block;
+    text-decoration: none;
+    font-weight: 500;
+}
+.proj .product_img
+{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%) scale(0);
+    height:300px;
+    transition: 0.5s;
+    transition-delay: 0s;
+
+}
+.proj:hover .product_img
+{   padding: 10px;
+    left:72%;
+    transform:translate(-50%,-50%) scale(1);
+    transition-delay: 0.5s;
+}
+.img_logo{
+    padding: 40px;
+}
